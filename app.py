@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd, numpy as np, joblib
 from sklearn.metrics.pairwise import cosine_similarity
+from similarity.cousine import similarity
 import os
 st.set_page_config(page_title="Shopper Spectrum", page_icon="🛒", layout="wide")
 st.title("🛒 Shopper Spectrum — Customer Segmentation & Product Recommendations")
@@ -8,10 +9,10 @@ st.title("🛒 Shopper Spectrum — Customer Segmentation & Product Recommendati
 tab1, tab2 = st.tabs(["🎯 Product Recommendation", "👤 Customer Segmentation"])
 model_path = os.getcwd()
 # ---------- Load artifacts ----------
-item_sim_path = os.path.join(model_path, "item_similarity.pkl")
+
 kmeans_path = os.path.join(model_path, "kmeans.pkl")
 scaler_path = os.path.join(model_path, "scaler.pkl")
-item_sim = pd.read_pickle(item_sim_path)
+
 kmeans   = joblib.load(kmeans_path)
 scaler   = joblib.load(scaler_path)
 
@@ -21,6 +22,7 @@ with tab1:
     product = st.text_input("Enter product name:")
     if st.button("Get Recommendations") and product:
         product = product.strip().upper()
+        item_sim = similarity()
         if product in item_sim.index:
             recs = item_sim[product].sort_values(ascending=False).drop(product).head(5)
             for i, (p, s) in enumerate(recs.items(), 1):
