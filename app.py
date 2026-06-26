@@ -6,11 +6,11 @@ st.set_page_config(page_title="Shopper Spectrum", page_icon="🛒", layout="wide
 st.title("🛒 Shopper Spectrum — Customer Segmentation & Product Recommendations")
 
 tab1, tab2 = st.tabs(["🎯 Product Recommendation", "👤 Customer Segmentation"])
-
+model_path = os.getcwd()
 # ---------- Load artifacts ----------
-item_sim = pd.read_pickle("item_similarity.pkl")
-kmeans   = joblib.load("kmeans.pkl")
-scaler   = joblib.load("scaler.pkl")
+item_sim = pd.read_pickle(model_path,"item_similarity.pkl")
+kmeans   = joblib.load(model_path,"kmeans.pkl")
+scaler   = joblib.load(model_path,"scaler.pkl")
 
 # ---------- TAB 1: Recommendation ----------
 with tab1:
