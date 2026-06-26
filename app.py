@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd, numpy as np, joblib
 from sklearn.metrics.pairwise import cosine_similarity
-
+import os
 st.set_page_config(page_title="Shopper Spectrum", page_icon="🛒", layout="wide")
 st.title("🛒 Shopper Spectrum — Customer Segmentation & Product Recommendations")
 
