@@ -1,7 +1,7 @@
 import pandas as pd
 from sklearn.metrics.pairwise import cosine_similarity
 import os
-model_path = os.path.join(os.getcwd(), "online_retail.csv") 
+model_path = os.path.join(os.getcwd(),'data',"online_retail.csv") 
 df= pd.read_csv(model_path)
 df.dropna()
 def similarity():
