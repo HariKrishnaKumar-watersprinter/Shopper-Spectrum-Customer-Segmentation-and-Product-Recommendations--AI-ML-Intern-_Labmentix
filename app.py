@@ -8,7 +8,8 @@ st.title("🛒 Shopper Spectrum — Customer Segmentation & Product Recommendati
 tab1, tab2 = st.tabs(["🎯 Product Recommendation", "👤 Customer Segmentation"])
 model_path = os.getcwd()
 # ---------- Load artifacts ----------
-item_sim = pd.read_pickle(model_path,"item_similarity.pkl")
+item_sim_path = os.path.join(model_path, "item_similarity.pkl")
+item_sim = pd.read_pickle(item_sim_path)
 kmeans   = joblib.load(model_path,"kmeans.pkl")
 scaler   = joblib.load(model_path,"scaler.pkl")
 
