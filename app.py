@@ -9,9 +9,11 @@ tab1, tab2 = st.tabs(["🎯 Product Recommendation", "👤 Customer Segmentation
 model_path = os.getcwd()
 # ---------- Load artifacts ----------
 item_sim_path = os.path.join(model_path, "item_similarity.pkl")
+kmeans_path = os.path.join(model_path, "kmeans.pkl")
+scaler_path = os.path.join(model_path, "scaler.pkl")
 item_sim = pd.read_pickle(item_sim_path)
-kmeans   = joblib.load(model_path,"kmeans.pkl")
-scaler   = joblib.load(model_path,"scaler.pkl")
+kmeans   = joblib.load(kmeans_path)
+scaler   = joblib.load(scaler_path)
 
 # ---------- TAB 1: Recommendation ----------
 with tab1:
