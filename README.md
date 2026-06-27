@@ -112,9 +112,9 @@ Implemented three clustering algorithms to validate groupings and detect anomali
 ### Model Comparison
 | Algorithm | Silhouette Score (Higher is better) | Business Use Case |
 | :--- | :--- | :--- |
-| **K-Means** | ~0.42 (Best) | Primary segmentation for marketing tiers. |
-| **Hierarchical** | ~0.40 | Validated nested sub-groups (B2B vs Retail VIPs). |
-| **DBSCAN** | ~0.28 | Anomaly detection (flagged extreme bulk buyers as Noise). |
+| **K-Means** | ~0.337 (Best) | Primary segmentation for marketing tiers. |
+| **Hierarchical** | ~0.241 | Validated nested sub-groups (B2B vs Retail VIPs). |
+| **DBSCAN** | ~0.293 | Anomaly detection (flagged extreme bulk buyers as Noise). |
 
 ---
 
